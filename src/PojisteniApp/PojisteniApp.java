@@ -8,11 +8,11 @@ public class PojisteniApp {
         Evidence evidence = new Evidence();
 
         while (true) {
+            System.out.print("Výtejte v pojištovací aplikaci, prosím vyberte jednu z nasledujicích možností.");
             System.out.println("\n1 - Přidat pojištěného");
             System.out.println("2 - Zobrazit seznam");
             System.out.println("3 - Vyhledat pojištěného");
             System.out.println("4 - Konec");
-            System.out.print("Vyber možnost: ");
 
             int volba = scanner.nextInt();
             scanner.nextLine(); // Čištění bufferu
