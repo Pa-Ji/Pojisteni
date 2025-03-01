@@ -19,14 +19,14 @@ public class PojisteniApp {
 
             switch (volba) {
                 case 1:
-                    System.out.print("Zadej jméno: ");
+                    System.out.print("Zadejte jméno: ");
                     String jmeno = scanner.nextLine();
-                    System.out.print("Zadej příjmení: ");
+                    System.out.print("Zadejte příjmení: ");
                     String prijmeni = scanner.nextLine();
-                    System.out.print("Zadej věk: ");
+                    System.out.print("Zadejte věk: ");
                     int vek = scanner.nextInt();
                     scanner.nextLine(); // Čištění bufferu
-                    System.out.print("Zadej telefonní číslo: ");
+                    System.out.print("Zadejte telefonní číslo: ");
                     String telefon = scanner.nextLine();
                     evidence.pridatPojisteneho(jmeno, prijmeni, vek, telefon);
                     break;
@@ -34,9 +34,9 @@ public class PojisteniApp {
                     evidence.zobrazSeznam();
                     break;
                 case 3:
-                    System.out.print("Zadej jméno: ");
+                    System.out.print("Zadejte jméno: ");
                     String hledaneJmeno = scanner.nextLine();
-                    System.out.print("Zadej příjmení: ");
+                    System.out.print("Zadejte příjmení: ");
                     String hledanePrijmeni = scanner.nextLine();
                     evidence.vyhledatPojisteneho(hledaneJmeno, hledanePrijmeni);
                     break;
@@ -45,7 +45,7 @@ public class PojisteniApp {
                     scanner.close();
                     return;
                 default:
-                    System.out.println("Neplatná volba, zkus to znovu.");
+                    System.out.println("Neplatná volba, zkuste to znovu.");
             }
         }
     }
