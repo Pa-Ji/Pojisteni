@@ -8,37 +8,32 @@ public class PojisteniApp {
         Evidence evidence = new Evidence();
 
         while (true) {
-            System.out.print("Výtejte v pojištovací aplikaci, prosím vyberte jednu z nasledujicích možností.");
-            System.out.println("\n1 - Přidat pojištěného");
+            System.out.println("\nVítejte v pojišťovací aplikaci. Vyberte jednu z následujících možností:");
+            System.out.println("1 - Přidat pojištěného");
             System.out.println("2 - Zobrazit seznam");
             System.out.println("3 - Vyhledat pojištěného");
             System.out.println("4 - Konec");
 
-            int volba = scanner.nextInt();
-            scanner.nextLine(); // Čištění bufferu
+            System.out.print("Vaše volba: ");
+            int volba;
+            try {
+                volba = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Neplatná volba, zkuste to znovu.");
+                continue;
+            }
 
             switch (volba) {
                 case 1:
-                    System.out.print("Zadejte jméno: ");
-                    String jmeno = scanner.nextLine();
-                    System.out.print("Zadejte příjmení: ");
-                    String prijmeni = scanner.nextLine();
-                    System.out.print("Zadejte věk: ");
-                    int vek = scanner.nextInt();
-                    scanner.nextLine(); // Čištění bufferu
-                    System.out.print("Zadejte telefonní číslo: ");
-                    String telefon = scanner.nextLine();
-                    evidence.pridatPojisteneho(jmeno, prijmeni, vek, telefon);
+                    evidence.pridatPojisteneho(scanner);
                     break;
                 case 2:
                     evidence.zobrazSeznam();
                     break;
                 case 3:
-                    System.out.print("Zadejte jméno: ");
-                    String hledaneJmeno = scanner.nextLine();
-                    System.out.print("Zadejte příjmení: ");
-                    String hledanePrijmeni = scanner.nextLine();
-                    evidence.vyhledatPojisteneho(hledaneJmeno, hledanePrijmeni);
+                    System.out.print("Zadejte hledaný text (jméno, příjmení nebo část telefonního čísla): ");
+                    String hledanyVyraz = scanner.nextLine().trim();
+                    evidence.vyhledatPojisteneho(hledanyVyraz);
                     break;
                 case 4:
                     System.out.println("Ukončuji aplikaci...");

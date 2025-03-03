@@ -21,6 +21,10 @@ public class Pojisteny {
         return prijmeni;
     }
 
+    public String getTelefon() {  // Přidáno pro možnost vyhledávání podle čísla
+        return telefon;
+    }
+
     @Override
     public String toString() {
         return jmeno + " " + prijmeni + ", " + vek + " let, Tel: " + telefon;
