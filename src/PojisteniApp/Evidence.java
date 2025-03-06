@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 class Evidence {
     private List<Pojisteny> seznam;
-    private static final Pattern JMENO_REGEX = Pattern.compile("^[A-ZČĎĚŇŘŠŤŽ][a-zčďěňřšťžáíéúůý]*([ ][A-ZČĎĚŇŘŠŤŽ][a-zčďěňřšťžáíéúůý]*)*$");
+    private static final Pattern JMENO_REGEX = Pattern.compile("^[A-ZČĎĚŇŘŠŤŽÚ][a-zčďěňřšťžáíéúůý]*([ ][A-ZČĎĚŇŘŠŤŽÚ][a-zčďěňřšťžáíéúůý]*)*$");
     private static final Pattern TELEFON_REGEX = Pattern.compile("\\d{9}");
 
     public Evidence() {
